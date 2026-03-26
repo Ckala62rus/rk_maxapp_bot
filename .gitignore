@@ -2,6 +2,7 @@
 .env.*.local
 .idea/
 .vscode/
+/documentation/backend_example/
 
 # Go
 /bin/
