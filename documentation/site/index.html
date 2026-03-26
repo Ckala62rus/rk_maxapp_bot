@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mini App — Заявки</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <input class="mode-toggle" type="checkbox" id="admin-toggle">
+
+    <div class="app">
+      <header class="app-header">
+        <div class="brand">
+          <div class="brand-logo">ZA</div>
+          <div>
+            <div class="brand-title">Заявки</div>
+            <div class="brand-subtitle">Mini App • чистый HTML/CSS</div>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <div class="status-pill user-only">Валидация: пользователь</div>
+          <div class="status-pill admin-only">Валидация: администратор</div>
+          <label class="toggle" for="admin-toggle">
+            <span>Админ-режим</span>
+            <span class="toggle-ui"></span>
+          </label>
+        </div>
+      </header>
+
+      <section class="hero card">
+        <div>
+          <h1>Создание и управление заявками</h1>
+          <p class="muted">
+            Пример интерфейса для Telegram Mini App: создание заявки, поиск, список,
+            комментарии и вложения. Переключатель выше показывает, как меняется
+            интерфейс после валидации роли.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <button class="btn primary">Создать заявку</button>
+          <button class="btn ghost">Мои заявки</button>
+          <button class="btn admin-only">Перейти в админку</button>
+        </div>
+      </section>
+
+      <section class="grid two-columns">
+        <div class="card">
+          <h2>Новая заявка</h2>
+          <form class="form">
+            <div class="field">
+              <label for="ticket-title">Тема заявки</label>
+              <input id="ticket-title" type="text" placeholder="Например: Не работает оплата">
+            </div>
+            <div class="field">
+              <label for="ticket-number">Номер заявки</label>
+              <input id="ticket-number" type="number" placeholder="000123">
+            </div>
+            <div class="field">
+              <label for="ticket-type">Тип</label>
+              <select id="ticket-type">
+                <option>Инцидент</option>
+                <option>Запрос</option>
+                <option>Консультация</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="ticket-priority">Приоритет</label>
+              <select id="ticket-priority">
+                <option>Низкий</option>
+                <option>Средний</option>
+                <option>Высокий</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="ticket-phone">Телефон</label>
+              <input id="ticket-phone" type="tel" placeholder="+7 (900) 000-00-00">
+            </div>
+            <div class="field full">
+              <label for="ticket-description">Описание</label>
+              <textarea id="ticket-description" rows="4" placeholder="Кратко опишите проблему"></textarea>
+            </div>
+            <div class="field full">
+              <label for="ticket-file">Файлы + текст</label>
+              <input id="ticket-file" type="file" multiple>
+              <small class="muted">Можно прикрепить несколько файлов и добавить текст выше.</small>
+            </div>
+            <div class="form-actions">
+              <button class="btn primary" type="button">Отправить</button>
+              <button class="btn ghost" type="button">Сохранить черновик</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2>Поиск заявки по номеру</h2>
+          <div class="search">
+            <input type="search" placeholder="Введите номер заявки, например 000123">
+            <button class="btn primary">Найти</button>
+          </div>
+
+          <div class="divider"></div>
+
+          <h3>Пример результатов</h3>
+          <div class="ticket-card">
+            <div class="ticket-info">
+              <div class="ticket-title">Заявка #000123</div>
+              <div class="muted">Статус: В работе • Ответственный: Иван П.</div>
+            </div>
+            <span class="badge warning">Средний</span>
+          </div>
+          <div class="ticket-card">
+            <div class="ticket-info">
+              <div class="ticket-title">Заявка #000118</div>
+              <div class="muted">Статус: Закрыта • Ответственный: Мария К.</div>
+            </div>
+            <span class="badge success">Низкий</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h2>Список заявок</h2>
+          <div class="filters">
+            <select>
+              <option>Все статусы</option>
+              <option>Новые</option>
+              <option>В работе</option>
+              <option>Закрытые</option>
+            </select>
+            <select>
+              <option>Сортировка: новые</option>
+              <option>Сортировка: по приоритету</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="list">
+          <article class="ticket-row">
+            <div>
+              <div class="ticket-title">#000125 • Не загружается файл</div>
+              <div class="muted">Создано: 12:30 • Клиент: ООО Ритейл</div>
+            </div>
+            <div class="row-meta">
+              <span class="badge danger">Высокий</span>
+              <span class="badge neutral">Новая</span>
+            </div>
+          </article>
+          <article class="ticket-row">
+            <div>
+              <div class="ticket-title">#000124 • Нужна консультация</div>
+              <div class="muted">Создано: 11:05 • Клиент: ИП Смирнов</div>
+            </div>
+            <div class="row-meta">
+              <span class="badge warning">Средний</span>
+              <span class="badge info">В работе</span>
+            </div>
+          </article>
+          <article class="ticket-row">
+            <div>
+              <div class="ticket-title">#000123 • Не работает оплата</div>
+              <div class="muted">Создано: 09:12 • Клиент: ООО Бета</div>
+            </div>
+            <div class="row-meta">
+              <span class="badge danger">Высокий</span>
+              <span class="badge success">Закрыта</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="grid two-columns">
+        <div class="card">
+          <h2>Карточка заявки</h2>
+          <div class="ticket-detail">
+            <div class="ticket-title">#000123 • Не работает оплата</div>
+            <div class="detail-grid">
+              <div>
+                <div class="label">Статус</div>
+                <div>В работе</div>
+              </div>
+              <div>
+                <div class="label">Ответственный</div>
+                <div>Иван П.</div>
+              </div>
+              <div>
+                <div class="label">Клиент</div>
+                <div>ООО Бета</div>
+              </div>
+              <div>
+                <div class="label">Приоритет</div>
+                <div>Высокий</div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="label">Описание</div>
+            <p>Оплата не проходит, ошибка 500. Просьба проверить платежный шлюз.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Комментарии и вложения</h2>
+          <div class="comments">
+            <div class="comment">
+              <div class="comment-head">Мария К. • 10:05</div>
+              <div>Проверяем логи сервера, обновим статус.</div>
+            </div>
+            <div class="comment">
+              <div class="comment-head">Иван П. • 10:15</div>
+              <div>Проблема на стороне шлюза, сделали запрос.</div>
+            </div>
+          </div>
+          <div class="field full">
+            <label for="comment-text">Добавить комментарий</label>
+            <textarea id="comment-text" rows="3" placeholder="Комментарий к заявке"></textarea>
+          </div>
+          <div class="field full">
+            <label for="comment-file">Прикрепить файлы</label>
+            <input id="comment-file" type="file" multiple>
+          </div>
+          <div class="form-actions">
+            <button class="btn primary" type="button">Добавить</button>
+            <button class="btn ghost" type="button">Отмена</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card admin-only">
+        <h2>Админ-панель</h2>
+        <div class="grid three-columns">
+          <div class="admin-card">
+            <div class="admin-title">Назначение ответственных</div>
+            <p class="muted">Выбор исполнителя и изменение статуса заявки.</p>
+            <button class="btn ghost">Открыть</button>
+          </div>
+          <div class="admin-card">
+            <div class="admin-title">Управление пользователями</div>
+            <p class="muted">Роли, доступы и подтверждение администраторов.</p>
+            <button class="btn ghost">Открыть</button>
+          </div>
+          <div class="admin-card">
+            <div class="admin-title">Отчеты</div>
+            <p class="muted">Сводная статистика по заявкам и срокам.</p>
+            <button class="btn ghost">Открыть</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h2>Пагинация</h2>
+          <div class="muted">Пример навигации по страницам списка заявок.</div>
+        </div>
+        <div class="pagination">
+          <button class="btn ghost">Назад</button>
+          <button class="page active">1</button>
+          <button class="page">2</button>
+          <button class="page">3</button>
+          <span class="ellipsis">…</span>
+          <button class="page">12</button>
+          <button class="btn ghost">Дальше</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h2>Состояние загрузки</h2>
+          <div class="muted">Пример спинера на время запроса.</div>
+        </div>
+        <div class="loading">
+          <div class="spinner"></div>
+          <div>
+            <div class="loading-title">Идет запрос…</div>
+            <div class="muted">Пожалуйста, подождите несколько секунд.</div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        Mini App UI • Демонстрационный шаблон для интеграции с Telegram WebApp.
+      </footer>
+    </div>
+  </body>
+</html>

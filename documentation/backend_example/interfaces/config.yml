@@ -1,0 +1,34 @@
+env: "local" # local, dev, prod
+config_file: "config.yml"
+http_server:
+    address: "localhost:3000"
+    port: "3000"
+    timeout: 4s # время соединения, за которое сервер должен вернуть результат
+    idle_timeout: 60s # время жизни соединения, на случай если клиент снова обратиться к серверу
+minio:
+    minio_host: "localhost:9000"
+    minio_user: "minioadmin"
+    minio_password: "minioadmin"
+    minio_ssl: false
+#database:
+#    # localhost для запуска без docker
+#    postgres_host: "localhost"
+#    postgres_port: "5433"
+#    postgres_user: "postgres"
+#    postgres_password: "postgres"
+#    postgres_db: "db"
+database:
+#     db_golang когда запускаем в Docker.
+    postgres_host: "db_golang"
+    postgres_port: "5432"
+    postgres_user: "postgres"
+    postgres_password: "postgres"
+    postgres_db: "db"
+#redis:
+#    redis_host: "localhost"
+#    redis_port: "6380"
+#    redis_db: 0
+redis:
+    redis_host: "go_redis"
+    redis_port: "6379"
+    redis_db: 0

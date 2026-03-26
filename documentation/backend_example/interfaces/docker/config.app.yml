@@ -1,0 +1,23 @@
+# Config for app running inside Docker Compose (service names as hosts)
+env: "production"
+config_file: "config.yml"
+http_server:
+    address: "0.0.0.0"
+    port: "3000"
+    timeout: 4s
+    idle_timeout: 60s
+minio:
+    minio_host: "minio:9000"
+    minio_user: "minioadmin"
+    minio_password: "minioadmin"
+    minio_ssl: false
+database:
+    postgres_host: "postgres"
+    postgres_port: "5432"
+    postgres_user: "postgres"
+    postgres_password: "postgres"
+    postgres_db: "db"
+redis:
+    redis_host: "redis"
+    redis_port: "6379"
+    redis_db: 0
