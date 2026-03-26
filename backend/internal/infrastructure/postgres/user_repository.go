@@ -6,7 +6,7 @@ import (
 	"errors"
 	"time"
 
-	"maxapp/internal/domain"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/domain"
 
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"

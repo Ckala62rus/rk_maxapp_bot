@@ -6,7 +6,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"maxapp/internal/config"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/config"
 )
 
 // MainConfig is loaded once during app startup.

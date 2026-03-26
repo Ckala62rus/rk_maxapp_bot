@@ -1,4 +1,4 @@
-module maxapp
+module github.com/Ckala62rus/rk_maxapp_bot/backend
 
 go 1.25.5
 

@@ -15,7 +15,7 @@ import (
 	"strings"
 	"time"
 
-	"maxapp/internal/domain"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/domain"
 
 	"github.com/google/uuid"
 	"go.opentelemetry.io/otel"

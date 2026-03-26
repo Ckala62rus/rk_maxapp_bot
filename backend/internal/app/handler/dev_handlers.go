@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"maxapp/internal/service"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/service"
 
 	"go.opentelemetry.io/otel"
 )

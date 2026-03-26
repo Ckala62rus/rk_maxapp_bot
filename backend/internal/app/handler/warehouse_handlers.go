@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"strings"
 
-	"maxapp/internal/app/middleware"
-	"maxapp/internal/domain"
-	"maxapp/internal/service"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/app/middleware"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/domain"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/service"
 
 	"go.opentelemetry.io/otel"
 )

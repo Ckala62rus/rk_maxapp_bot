@@ -7,7 +7,7 @@ import (
 	"net/url"
 	"time"
 
-	"maxapp/internal/config"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/config"
 
 	_ "github.com/denisenkom/go-mssqldb"
 )

@@ -3,7 +3,7 @@ package handler
 import (
 	"net/http"
 
-	"maxapp/internal/app/middleware"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/app/middleware"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/prometheus/client_golang/prometheus/promhttp"

@@ -5,7 +5,7 @@ import (
 	"log/slog"
 	"net/http"
 
-	"maxapp/internal/service"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/service"
 )
 
 // initDataHeader is passed by frontend for each request.

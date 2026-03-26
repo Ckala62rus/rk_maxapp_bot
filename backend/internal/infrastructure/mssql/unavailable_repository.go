@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"maxapp/internal/domain"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/domain"
 )
 
 // unavailableWarehouseRepository returns a stable error when MSSQL is down.

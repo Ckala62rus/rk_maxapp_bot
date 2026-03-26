@@ -4,7 +4,7 @@ package handler
 import (
 	"log/slog"
 
-	"maxapp/internal/service"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/service"
 )
 
 // Handler aggregates all services and shared dependencies.

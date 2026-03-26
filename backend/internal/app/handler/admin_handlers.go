@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"maxapp/internal/domain"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/domain"
 
 	"github.com/go-chi/chi/v5"
 	"go.opentelemetry.io/otel"

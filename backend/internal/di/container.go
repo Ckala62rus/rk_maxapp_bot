@@ -5,12 +5,12 @@ import (
 	"log/slog"
 	"strings"
 
-	"maxapp/internal/app/handler"
-	"maxapp/internal/config"
-	"maxapp/internal/domain"
-	"maxapp/internal/infrastructure/mssql"
-	"maxapp/internal/infrastructure/postgres"
-	"maxapp/internal/service"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/app/handler"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/config"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/domain"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/infrastructure/mssql"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/infrastructure/postgres"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/service"
 )
 
 // Container aggregates constructed dependencies.

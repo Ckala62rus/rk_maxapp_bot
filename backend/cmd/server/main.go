@@ -11,11 +11,11 @@ import (
 	"syscall"
 	"time"
 
-	"maxapp/internal/di"
-	"maxapp/internal/profiling"
-	"maxapp/internal/telemetry"
-	"maxapp/pkg"
-	"maxapp/pkg/logger"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/di"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/profiling"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/telemetry"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/pkg"
+	"github.com/Ckala62rus/rk_maxapp_bot/backend/pkg/logger"
 
 	"go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp"
 )
