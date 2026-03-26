@@ -1,0 +1,25 @@
+env: "production"
+log:
+    level: "info"
+http_server:
+    address: "0.0.0.0"
+    port: "3000"
+    timeout: 120s
+    idle_timeout: 60s
+postgres:
+    host: "postgres"
+    port: "5432"
+    user: "postgres"
+    password: "postgres"
+    database: "app"
+    sslmode: "disable"
+mssql:
+    host: "mssql"
+    port: "1433"
+    user: "sa"
+    password: "password"
+    database: "DAX"
+    encrypt: "disable"
+max:
+    bot_token: "CHANGE_ME"
+    allow_mock_initdata: false

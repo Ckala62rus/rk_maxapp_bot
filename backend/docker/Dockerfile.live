@@ -1,0 +1,13 @@
+# Dev image: air + dlv for hot reload and debugging
+FROM golang:1.25-alpine
+
+WORKDIR /app
+
+RUN apk add --no-cache ca-certificates git
+
+RUN go install github.com/go-delve/delve/cmd/dlv@v1.26.1 && \
+    go install github.com/air-verse/air@v1.64.5
+
+EXPOSE 3000 40000
+
+CMD ["air", "-c", ".air.toml"]

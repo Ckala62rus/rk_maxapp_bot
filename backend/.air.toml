@@ -1,0 +1,13 @@
+root = "."
+tmp_dir = "tmp"
+
+[build]
+  cmd = "go build -gcflags=\"all=-N -l\" -o ./tmp/server ./cmd/server"
+  bin = "tmp/server"
+  full_bin = "dlv exec ./tmp/server --headless --listen=:40000 --api-version=2 --accept-multiclient --continue --"
+  include_ext = ["go", "yaml"]
+  exclude_dir = ["tmp", "vendor"]
+  poll = true
+
+[log]
+  time = true
