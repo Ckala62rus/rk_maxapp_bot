@@ -31,16 +31,6 @@ services:
       driver: loki
       options:
         loki-url: "${LOKI_URL:-http://loki:3100/loki/api/v1/push}"
-        loki-pipeline-stages: |
-          - json:
-              expressions:
-                level: level
-                app_name: app_name
-                app_version: app_version
-          - labels:
-              level:
-              app_name:
-              app_version:
 
   web:
     image: maxapp-web:prod

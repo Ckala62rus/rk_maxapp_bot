@@ -212,7 +212,7 @@ docker compose -f docker-compose.dev.yml logs -f backend-dev-live
 - `http://localhost:3001` → Explore → Tempo, Service `maxapp`
 
 ### Логи (Loki)
-- `http://localhost:3001` → Explore → Loki, запрос `{app_name="maxapp"}`
+- `http://localhost:3001` → Explore → Loki, например `{container_name="maxapp-backend"}` или `{}` за последние 15 минут
 
 ## Частые ошибки и диагностика
 ### `Unexpected token '<' ... is not valid JSON`

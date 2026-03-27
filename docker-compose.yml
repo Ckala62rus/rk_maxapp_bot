@@ -41,16 +41,7 @@ services:
       options:
         # Use service name `loki` on Linux prod (host.docker.internal is often missing there).
         loki-url: "${LOKI_URL:-http://loki:3100/loki/api/v1/push}"
-        loki-pipeline-stages: |
-          - json:
-              expressions:
-                level: level
-                app_name: app_name
-                app_version: app_version
-          - labels:
-              level:
-              app_name:
-              app_version:
+        # No json pipeline: backend mixes plain text and JSON; json-only stages dropped lines in Loki.
 
   web:
     build:
