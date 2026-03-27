@@ -168,6 +168,8 @@ curl http://localhost:3000/readyz
 ```
 
 ## Миграции
+В строке `-database` логин и пароль должны быть **URL-encoded** (например `%` → `%25`, `@` → `%40`), иначе `migrate` выдаст `invalid URL escape`. Бэкенд при старте кодирует их сам из `.env`.
+
 ### Dev (обновить миграции)
 ```
 docker compose -f docker-compose.dev.yml --profile tools run --rm migrate \

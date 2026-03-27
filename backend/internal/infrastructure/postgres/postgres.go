@@ -3,7 +3,8 @@ package postgres
 
 import (
 	"database/sql"
-	"fmt"
+	"net"
+	"net/url"
 	"time"
 
 	"github.com/Ckala62rus/rk_maxapp_bot/backend/internal/config"
@@ -13,11 +14,17 @@ import (
 
 // New opens a PostgreSQL connection using pgx stdlib driver.
 func New(cfg config.PostgresConfig) (*sql.DB, error) {
-	// Build DSN from config to avoid leaking credentials in logs.
-	dsn := fmt.Sprintf(
-		"postgres://%s:%s@%s:%s/%s?sslmode=%s",
-		cfg.User, cfg.Password, cfg.Host, cfg.Port, cfg.Database, cfg.SSLMode,
-	)
+	// Build URI with net/url so user/password with @, :, %, etc. are encoded (pgx parses a URL).
+	u := &url.URL{
+		Scheme: "postgres",
+		User:   url.UserPassword(cfg.User, cfg.Password),
+		Host:   net.JoinHostPort(cfg.Host, cfg.Port),
+		Path:   "/" + url.PathEscape(cfg.Database),
+	}
+	q := url.Values{}
+	q.Set("sslmode", cfg.SSLMode)
+	u.RawQuery = q.Encode()
+	dsn := u.String()
 	db, err := sql.Open("pgx", dsn)
 	if err != nil {
 		return nil, err
