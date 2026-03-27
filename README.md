@@ -146,8 +146,9 @@ docker compose up --build -d
 3. Применить миграции (см. раздел ниже).
 4. Проверить health endpoints и логи.
 
-Prod UI: `http://localhost:8080`  
-Backend: `http://localhost:3000`
+По умолчанию UI доступен на портах **80** (HTTP) и **443** (HTTPS). Если на сервере эти порты заняты, в `.env` задайте `WEB_HTTP_PORT` и `WEB_HTTPS_PORT` (например `88` и `8443`) — тогда открывай `http://<хост>:88` и `https://<хост>:8443`.
+
+Backend API (напрямую): `http://localhost:3000`
 
 ## Обновление кода (prod)
 1. Обновить код в репозитории.
