@@ -45,7 +45,7 @@ services:
     logging:
       driver: loki
       options:
-        loki-url: "${LOKI_URL:-http://loki:3100/loki/api/v1/push}"
+        loki-url: "${LOKI_URL:-http://127.0.0.1:3100/loki/api/v1/push}"
 
   frontend:
     image: node:20.18-alpine

@@ -39,8 +39,8 @@ services:
     logging:
       driver: loki
       options:
-        # Use service name `loki` on Linux prod (host.docker.internal is often missing there).
-        loki-url: "${LOKI_URL:-http://loki:3100/loki/api/v1/push}"
+        # Driver runs on Docker *host*: hostname `loki` does not resolve there. Loki publishes 3100 on host.
+        loki-url: "${LOKI_URL:-http://127.0.0.1:3100/loki/api/v1/push}"
         # No json pipeline: backend mixes plain text and JSON; json-only stages dropped lines in Loki.
 
   web:

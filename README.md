@@ -213,6 +213,7 @@ docker compose -f docker-compose.dev.yml logs -f backend-dev-live
 
 ### Логи (Loki)
 - `http://localhost:3001` → Explore → Loki, например `{container_name="maxapp-backend"}` или `{}` за последние 15 минут
+- Драйвер логов выполняется на **хосте** Docker: в `.env` для `LOKI_URL` нужен **`http://127.0.0.1:3100/...`**, не `http://loki:3100` (имя сервиса с хоста не резолвится). Должен быть установлен плагин: `docker plugin install grafana/loki-docker-driver:...` (см. раздел «Установка Loki драйвера» выше).
 
 ## Частые ошибки и диагностика
 ### `Unexpected token '<' ... is not valid JSON`
