@@ -52,8 +52,6 @@ services:
     ports:
       - "${WEB_HTTP_PORT:-88}:80"
       - "${WEB_HTTPS_PORT:-8443}:443"
-    environment:
-      CERT_DOMAIN: ${CERT_DOMAIN}
     volumes:
       - /var/www/certbot:/var/www/certbot:ro
       - /etc/letsencrypt:/etc/letsencrypt:ro
