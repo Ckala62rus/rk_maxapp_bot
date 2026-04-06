@@ -50,19 +50,12 @@ services:
     container_name: maxapp-web
     restart: unless-stopped
     ports:
-      # На хосте можно сменить, если 80/443 заняты: WEB_HTTP_PORT=88 WEB_HTTPS_PORT=8443 в .env
-      - "${WEB_HTTP_PORT:-80}:80"
-      - "${WEB_HTTPS_PORT:-443}:443"
+      - "${WEB_HTTP_PORT:-88}:80"
+      - "${WEB_HTTPS_PORT:-8443}:443"
     environment:
-      # Used by /entrypoint.sh to resolve default Let’s Encrypt paths.
       CERT_DOMAIN: ${CERT_DOMAIN}
-      # Optional: if you mount certificates from another location, set these explicitly.
-      # SSL_CERT_PATH: ${SSL_CERT_PATH}
-      # SSL_KEY_PATH: ${SSL_KEY_PATH}
     volumes:
-      # ACME challenge files (webroot mode).
       - /var/www/certbot:/var/www/certbot:ro
-      # Let’s Encrypt storage (default certificate paths).
       - /etc/letsencrypt:/etc/letsencrypt:ro
     depends_on:
       - backend
